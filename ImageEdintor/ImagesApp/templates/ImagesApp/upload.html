@@ -1,0 +1,21 @@
+{% extends "ImagesApp/major.html" %}
+{% load static %}
+{% block content %}
+
+<form action="" method="get" class="style-form">
+    <div class="form-row">
+        <div class="col-7">
+            <input type="text" class="form-control" placeholder="Image">
+        </div>
+        <div class="col">
+<!--            <label for="exampleFormControlFile1">Example file input</label>-->
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </div>
+    </div>
+    </div>
+</form>
+
+{% endblock %}
