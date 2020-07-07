@@ -1,8 +1,7 @@
-.jumbotron {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    margin-bottom: 0;
-    background-color: #fff;
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
 }
 
 @media (min-width: 768px) {
@@ -10,6 +9,13 @@
         padding-top: 6rem;
         padding-bottom: 6rem;
     }
+}
+
+.jumbotron {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+    background-color: #fff;
 }
 
 .jumbotron p:last-child {
@@ -47,8 +53,6 @@ footer p {
     padding: 10px;
 }
 
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
+.img-upload {
+
 }
