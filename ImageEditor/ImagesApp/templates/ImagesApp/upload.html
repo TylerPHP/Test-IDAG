@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<form action="" method="get" enctype="multipart/form-data" class="style-form">
+<form action="" method="post" enctype="multipart/form-data" class="style-form">
     {% csrf_token %}
     <div class="form-row">
         <div class="col-7">
@@ -17,7 +17,7 @@
     </div>
 </form>
 <div class="text-center">
-    <img src="{% static 'ImagesApp/images/' %}{{ image }}" alt="Responsive image">
+    <img src="{{ image }}" alt="Responsive image">
 </div>
 <div class="container">
     <p class="float-right">
