@@ -6,10 +6,10 @@
     {% csrf_token %}
     <div class="form-row">
         <div class="col-7">
-            <input type="text" class="form-control" placeholder="Введите имя картинки для замены" value="{{ image }}">
+            <input type="text" name="name" class="form-control" placeholder="Введите имя картинки для замены" value="image">
         </div>
         <div class="col">
-            <input type="file" name="newImage" class="form-control-file" id="exampleFormControlFile1">
+            <input type="file" name="images" class="form-control-file" id="exampleFormControlFile1">
         </div>
         <div class="col">
             <button type="submit" class="btn btn-primary">Upload</button>

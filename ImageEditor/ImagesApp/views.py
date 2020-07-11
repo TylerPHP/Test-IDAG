@@ -4,6 +4,7 @@ from ImagesApp.models import Images
 from .forms import ImageForm
 from django.core.files.storage import FileSystemStorage
 import random
+from datetime import datetime
 
 
 class ShowImage(View):
@@ -24,9 +25,10 @@ class UploadImage(View):
 
     def post(self, request):
         """Обновление выбранного изображения"""
-        form = ImageForm(request.POST)
+        form = ImageForm(request.POST, request.FILES)
+        print(form.errors)
         if form.is_valid():
-            print(ok)
+            print('ok')
             form.save()
         # print(form)
         return render(request, 'ImagesApp/upload.html')

@@ -6,4 +6,4 @@ class ImageForm(forms.ModelForm):
     """Загрузка изображений"""
     class Meta:
         model = Images
-        fields = ['images', 'update_date', ]
+        fields = ['images']
