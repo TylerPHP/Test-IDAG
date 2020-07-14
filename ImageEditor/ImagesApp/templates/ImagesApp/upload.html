@@ -6,19 +6,21 @@
     {% csrf_token %}
     <div class="form-row">
         <div class="col-7">
-            <input type="text" name="name" class="form-control" placeholder="Введите имя картинки для замены" value="image">
+            <input type="text" name="name" class="form-control" placeholder="Введите имя картинки для замены" value="{{ image }}">
         </div>
         <div class="col">
-            <input type="file" name="images" class="form-control-file" id="exampleFormControlFile1">
+            <input type="file" name="images" class="form-control-file">
         </div>
         <div class="col">
             <button type="submit" class="btn btn-primary">Upload</button>
         </div>
     </div>
 </form>
+{% if image %}
 <div class="text-center">
-    <img src="{{ image }}" alt="Responsive image">
+    <img src="{{ MEDIA_URL }}{{ image }}" alt="Responsive image">
 </div>
+{% endif %}
 <div class="container">
     <p class="float-right">
         <a href="/">Вернутся на главную</a>

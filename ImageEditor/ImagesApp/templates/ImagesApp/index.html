@@ -1,19 +1,19 @@
 {% extends "ImagesApp/major.html" %}
 {% block content %}
 {% load static %}
-<!--{% for img in all_images %}-->
+{% for img in all_images %}
 <div class="album py-5 bg-light">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <p>{{img.path_hash}}</p>
+                <p>{{img.images}}</p>
                 <div class="card mb-4 shadow-sm">
-                    <img src="" alt="">
+                    <img src="{{ MEDIA_URL }}{{ img.images }}" alt="">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <small class="text-muted">время обновления: </small>
                             <div class="btn-group">
-                                <a href="/upload/?img="><button type="button" class="btn btn-sm btn-outline-secondary">Upload</button></a>
+                                <a href="/upload/?img={{ img.images }}"><button type="button" class="btn btn-sm btn-outline-secondary">Upload</button></a>
                                 <button type="button" class="btn btn-sm btn-outline-secondary">Resize</button>
                             </div>
                         </div>
@@ -23,5 +23,5 @@
         </div>
     </div>
 </div>
-<!--{% endfor %}-->
+{% endfor %}
 {% endblock %}
