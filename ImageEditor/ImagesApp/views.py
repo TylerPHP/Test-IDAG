@@ -19,19 +19,20 @@ class UploadImage(View):
     """Класс обновления изображений"""
     def get(self, request):
         """Отображение изображений"""
-        context = {'image': request.GET.get("img")}
+        img = request.GET.get("img")
+        if not img:
+            img = ''
+        context = {'image': img}
         return render(request, 'ImagesApp/upload.html', context)
 
     def post(self, request):
-        """Обновление выбранного изображения"""
+        """Загрузка или обновление файла"""
         form = ImageForm(request.POST, request.FILES)
-
         if form.is_valid():
             if request.POST['name'] == '':
-                print(form.errors)
                 form.save()
             else:
-                m = Images.objects.get(id=request.POST['id'])
-                # m.images =
+                m = Images(images=request.FILES)
+                m.save()
         return render(request, 'ImagesApp/upload.html')
 
